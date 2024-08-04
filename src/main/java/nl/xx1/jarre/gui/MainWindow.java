@@ -2,6 +2,8 @@ package nl.xx1.jarre.gui;
 
 import java.awt.*;
 import javax.swing.*;
+import nl.xx1.jarre.controller.ContentController;
+import nl.xx1.jarre.controller.TreeController;
 import nl.xx1.jarre.gui.content.ContentPanel;
 import nl.xx1.jarre.gui.menu.MenuBar;
 import nl.xx1.jarre.gui.tree.TreePanel;
@@ -20,13 +22,18 @@ public class MainWindow extends JFrame {
 
         setLocationRelativeTo(null);
 
-        contentPanel = new ContentPanel();
-        treePanel = new TreePanel();
+        contentPanel = ContentController.getInstance().getComponent();
+        treePanel = TreeController.getInstance().getComponent();
 
         splitPane = new JSplitPane();
         splitPane.setLeftComponent(treePanel);
         splitPane.setDividerLocation(300);
-        splitPane.setRightComponent(contentPanel);
+
+        JPanel jPanel = new JPanel();
+        jPanel.setLayout(new BorderLayout());
+        jPanel.add(contentPanel, BorderLayout.CENTER);
+
+        splitPane.setRightComponent(jPanel);
 
         add(splitPane);
         setVisible(true);

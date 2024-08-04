@@ -8,12 +8,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import nl.xx1.jarre.model.DroppedFile;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.tree.ClassNode;
 
 public class JarUtilities {
 
-    public static List<ClassNode> getClasses(File file) {
+    public static DroppedFile getClasses(File file) {
         try (JarFile jarFile = new JarFile(file)) {
             return getClasses(jarFile);
         } catch (IOException e) {
@@ -21,7 +22,7 @@ public class JarUtilities {
         }
     }
 
-    public static List<ClassNode> getClasses(JarFile file) throws IOException {
+    public static DroppedFile getClasses(JarFile file) throws IOException {
         List<ClassNode> classNodes = new ArrayList<>();
         Enumeration<JarEntry> entries = file.entries();
         Iterator<JarEntry> iterator = entries.asIterator();
@@ -36,6 +37,7 @@ public class JarUtilities {
             classReader.accept(classNode, ClassReader.SKIP_FRAMES);
             classNodes.add(classNode);
         }
-        return classNodes;
+
+        return new DroppedFile(file.getName(), classNodes);
     }
 }
