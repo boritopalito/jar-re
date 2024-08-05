@@ -1,7 +1,7 @@
 package nl.xx1.jarre.gui;
 
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
 public class CompoundIcon implements Icon {
     private final Icon icon1;

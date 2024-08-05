@@ -23,7 +23,7 @@ public class StructureController extends BaseController<StructurePanel> implemen
             root.add(node);
         }
 
-        for (FieldNode  fieldNode : classNode.fields) {
+        for (FieldNode fieldNode : classNode.fields) {
             DefaultMutableTreeNode node = new FieldMutableTreeNode(fieldNode);
             root.add(node);
         }

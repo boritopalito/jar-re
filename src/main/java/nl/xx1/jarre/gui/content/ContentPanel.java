@@ -17,7 +17,6 @@ public class ContentPanel extends JScrollPane {
         contentPane.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 10));
         contentPane.setEditable(false);
 
-
         setViewportView(contentPane);
 
         styledDocument = contentPane.getStyledDocument();

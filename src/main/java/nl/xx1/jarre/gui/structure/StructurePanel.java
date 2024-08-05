@@ -1,10 +1,9 @@
 package nl.xx1.jarre.gui.structure;
 
-import nl.xx1.jarre.gui.tree.CustomTreeCellRenderer;
-
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
+import nl.xx1.jarre.gui.tree.CustomTreeCellRenderer;
 
 public class StructurePanel extends JPanel {
     private final JScrollPane jScrollPane;

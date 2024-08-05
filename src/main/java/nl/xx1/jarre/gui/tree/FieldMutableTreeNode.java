@@ -1,8 +1,7 @@
 package nl.xx1.jarre.gui.tree;
 
-import org.objectweb.asm.tree.FieldNode;
-
 import javax.swing.tree.DefaultMutableTreeNode;
+import org.objectweb.asm.tree.FieldNode;
 
 public class FieldMutableTreeNode extends DefaultMutableTreeNode {
     private final FieldNode fieldNode;

@@ -1,18 +1,16 @@
 package nl.xx1.jarre.gui.tree;
 
-import nl.xx1.jarre.gui.CompoundIcon;
-
 import java.awt.*;
 import java.lang.reflect.Modifier;
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeCellRenderer;
+import nl.xx1.jarre.gui.CompoundIcon;
 
 public class CustomTreeCellRenderer extends DefaultTreeCellRenderer {
     @Override
     public Component getTreeCellRendererComponent(
             JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
         Component c = super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
-
 
         if (value instanceof ClassMutableTreeNode classMutableTreeNode) {
             setIcon(new ImageIcon("src/main/resources/icons/class.png"));
