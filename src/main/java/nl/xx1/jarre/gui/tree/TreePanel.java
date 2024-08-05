@@ -16,10 +16,12 @@ public class TreePanel extends JPanel {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 
         tree = new JTree(root);
-        tree.setRootVisible(false);
+        tree.setRootVisible(true);
         jScrollPane.setViewportView(tree);
         treeModel = new DefaultTreeModel(root);
         jScrollPane.setBorder(BorderFactory.createEmptyBorder());
+
+        tree.setCellRenderer(new CustomTreeCellRenderer());
         add(jScrollPane);
     }
 
