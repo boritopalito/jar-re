@@ -16,7 +16,7 @@ public class TreePanel extends JPanel {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 
         tree = new JTree(root);
-        tree.setRootVisible(true);
+        tree.setRootVisible(false);
         jScrollPane.setViewportView(tree);
         treeModel = new DefaultTreeModel(root);
         jScrollPane.setBorder(BorderFactory.createEmptyBorder());

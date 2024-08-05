@@ -15,6 +15,7 @@ public class StructurePanel extends JPanel {
         jScrollPane.setBorder(BorderFactory.createEmptyBorder());
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
         tree = new JTree(root);
+        tree.setRootVisible(false);
         tree.setCellRenderer(new CustomTreeCellRenderer());
 
         jScrollPane.setViewportView(tree);
