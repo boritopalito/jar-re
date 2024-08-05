@@ -23,6 +23,12 @@ public class TreeController extends BaseController<TreePanel> {
         updateTree();
     }
 
+    public void addTreeSelectionListeners(TreeObserver... treeObservers) {
+        for (TreeObserver treeObserver : treeObservers) {
+            addTreeSelectionListener(treeObserver);
+        }
+    }
+
     public void addTreeSelectionListener(TreeObserver treeObserver) {
         observers.add(treeObserver);
     }

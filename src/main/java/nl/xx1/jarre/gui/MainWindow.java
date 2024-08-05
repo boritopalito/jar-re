@@ -35,12 +35,10 @@ public class MainWindow extends JFrame {
         contentPanel = new ContentPanel();
         contentController = new ContentController(contentPanel);
 
-        treeController.addTreeSelectionListener(contentController);
-
         structurePanel = new StructurePanel();
         structureController = new StructureController(structurePanel);
 
-        treeController.addTreeSelectionListener(structureController);
+        treeController.addTreeSelectionListeners(contentController, structureController);
 
         JSplitPane leftPane = new JSplitPane();
         leftPane.setTopComponent(treePanel);
