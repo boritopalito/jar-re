@@ -11,11 +11,8 @@ import org.objectweb.asm.tree.FieldNode;
 import org.objectweb.asm.tree.MethodNode;
 
 public class StructureController extends BaseController<StructurePanel> implements TreeObserver {
-    private static final StructureController INSTANCE = new StructureController();
-
-    private StructureController() {
-        super(new StructurePanel());
-        TreeController.getInstance().addObserver(this);
+    public StructureController(StructurePanel structurePanel) {
+        super(structurePanel);
     }
 
     @Override
@@ -32,9 +29,5 @@ public class StructureController extends BaseController<StructurePanel> implemen
         }
         DefaultTreeModel defaultTreeModel = new DefaultTreeModel(root);
         getComponent().getTree().setModel(defaultTreeModel);
-    }
-
-    public static StructureController getInstance() {
-        return INSTANCE;
     }
 }

@@ -17,15 +17,13 @@ import org.objectweb.asm.tree.ClassNode;
 public class TreeController extends BaseController<TreePanel> {
     private final List<TreeObserver> observers = new ArrayList<>();
 
-    private static final TreeController INSTANCE = new TreeController();
-
-    private TreeController() {
-        super(new TreePanel());
+    public TreeController(TreePanel treePanel) {
+        super(treePanel);
         addListeners();
         updateTree();
     }
 
-    public void addObserver(TreeObserver treeObserver) {
+    public void addTreeSelectionListener(TreeObserver treeObserver) {
         observers.add(treeObserver);
     }
 
@@ -66,9 +64,5 @@ public class TreeController extends BaseController<TreePanel> {
                 }
             }
         });
-    }
-
-    public static TreeController getInstance() {
-        return INSTANCE;
     }
 }

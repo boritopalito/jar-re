@@ -11,9 +11,10 @@ public class ContentPanel extends JScrollPane {
     private final JTextPane contentPane;
 
     public ContentPanel() {
+        setBorder(null);
         contentPane = new JTextPane();
         contentPane.setBackground(new Color(30, 31, 34));
-        contentPane.setBorder(BorderFactory.createEmptyBorder());
+        contentPane.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 10));
         contentPane.setEditable(false);
 
 

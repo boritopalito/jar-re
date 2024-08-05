@@ -15,11 +15,9 @@ import org.objectweb.asm.util.TraceClassVisitor;
 
 public class ContentController extends BaseController<ContentPanel> implements TreeObserver {
     private final TextPaneHighlighter textPaneHighlighter;
-    private static final ContentController INSTANCE = new ContentController();
 
-    private ContentController() {
-        super(new ContentPanel());
-        TreeController.getInstance().addObserver(this);
+    public ContentController(ContentPanel contentPanel) {
+        super(contentPanel);
         textPaneHighlighter = new TextPaneHighlighter(getComponent().getTextPane());
         textPaneHighlighter.addHighlighter(new SyntaxHighlighter());
     }
@@ -56,9 +54,5 @@ public class ContentController extends BaseController<ContentPanel> implements T
     @Override
     public void update(ClassNode classNode) {
         display(classNode);
-    }
-
-    public static ContentController getInstance() {
-        return INSTANCE;
     }
 }
