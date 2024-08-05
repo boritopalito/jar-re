@@ -1,5 +1,7 @@
 package nl.xx1.jarre.gui.content;
 
+import nl.xx1.jarre.gui.FontManager;
+
 import java.awt.*;
 import java.io.IOException;
 import java.util.Objects;
@@ -21,16 +23,7 @@ public class ContentPanel extends JScrollPane {
 
         styledDocument = contentPane.getStyledDocument();
 
-        try {
-            Font font = Font.createFont(
-                    Font.TRUETYPE_FONT,
-                    Objects.requireNonNull(getClass().getResourceAsStream("/fonts/JetBrainsMono-Regular.ttf")));
-            GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(font);
-            contentPane.setFont(font.deriveFont(13f));
-            contentPane.setForeground(new Color(255, 255, 255));
-        } catch (FontFormatException | IOException e) {
-            throw new RuntimeException(e);
-        }
+        contentPane.setFont(FontManager.getDefault().deriveFont(13f));
     }
 
     public StyledDocument getDocument() {

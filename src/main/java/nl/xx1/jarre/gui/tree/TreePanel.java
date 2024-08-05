@@ -1,5 +1,7 @@
 package nl.xx1.jarre.gui.tree;
 
+import nl.xx1.jarre.gui.FontManager;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -20,6 +22,7 @@ public class TreePanel extends JPanel {
         jScrollPane.setViewportView(tree);
         treeModel = new DefaultTreeModel(root);
         jScrollPane.setBorder(BorderFactory.createEmptyBorder());
+        tree.setFont(FontManager.getDefault().deriveFont(13f));
 
         tree.setCellRenderer(new CustomTreeCellRenderer());
         add(jScrollPane);
