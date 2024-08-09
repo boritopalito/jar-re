@@ -1,12 +1,9 @@
 package nl.xx1.jarre.gui.content;
 
-import nl.xx1.jarre.gui.FontManager;
-
 import java.awt.*;
-import java.io.IOException;
-import java.util.Objects;
 import javax.swing.*;
 import javax.swing.text.StyledDocument;
+import nl.xx1.jarre.gui.FontManager;
 
 public class ContentPanel extends JScrollPane {
     private StyledDocument styledDocument;

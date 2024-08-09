@@ -1,11 +1,10 @@
 package nl.xx1.jarre.gui.tree;
 
-import nl.xx1.jarre.gui.FontManager;
-
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import nl.xx1.jarre.gui.FontManager;
 
 public class TreePanel extends JPanel {
     private final JScrollPane jScrollPane;
