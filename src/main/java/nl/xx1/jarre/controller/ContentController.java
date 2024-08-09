@@ -5,13 +5,11 @@ import java.io.StringWriter;
 import javax.swing.*;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.StyledDocument;
-
 import nl.xx1.jarre.event.Subscribe;
 import nl.xx1.jarre.events.TreeOptionChosen;
 import nl.xx1.jarre.gui.content.ContentPanel;
 import nl.xx1.jarre.gui.highlighter.TextPaneHighlighter;
 import nl.xx1.jarre.gui.highlighter.impl.SyntaxHighlighter;
-import nl.xx1.jarre.observer.TreeObserver;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.util.Textifier;
 import org.objectweb.asm.util.TraceClassVisitor;

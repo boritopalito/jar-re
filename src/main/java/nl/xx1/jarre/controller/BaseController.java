@@ -1,8 +1,7 @@
 package nl.xx1.jarre.controller;
 
-import nl.xx1.jarre.event.EventBus;
-
 import java.awt.*;
+import nl.xx1.jarre.event.EventBus;
 
 public class BaseController<T extends Component> {
     private final T component;

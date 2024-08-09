@@ -2,9 +2,7 @@ package nl.xx1.jarre.event;
 
 import com.google.common.base.Preconditions;
 import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
 import java.util.*;
-import java.util.function.Consumer;
 
 public class EventBus {
     private static final EventBus INSTANCE = new EventBus();

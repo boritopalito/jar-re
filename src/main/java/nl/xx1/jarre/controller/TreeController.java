@@ -2,11 +2,8 @@ package nl.xx1.jarre.controller;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
-
 import nl.xx1.jarre.event.EventBus;
 import nl.xx1.jarre.event.Subscribe;
 import nl.xx1.jarre.events.FileSelected;
@@ -14,7 +11,6 @@ import nl.xx1.jarre.events.TreeOptionChosen;
 import nl.xx1.jarre.gui.tree.ClassMutableTreeNode;
 import nl.xx1.jarre.gui.tree.TreePanel;
 import nl.xx1.jarre.model.DroppedFile;
-import nl.xx1.jarre.observer.TreeObserver;
 import nl.xx1.jarre.utilities.JarUtilities;
 import org.objectweb.asm.tree.ClassNode;
 
