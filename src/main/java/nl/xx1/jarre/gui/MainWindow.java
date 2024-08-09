@@ -40,15 +40,11 @@ public class MainWindow extends JFrame {
         treePanel = new TreePanel();
         treeController = new TreeController(treePanel);
 
-        EventBus.getInstance().register(treeController);
-
         contentPanel = new ContentPanel();
         contentController = new ContentController(contentPanel);
 
         structurePanel = new StructurePanel();
         structureController = new StructureController(structurePanel);
-
-        treeController.addTreeSelectionListeners(contentController, structureController);
 
         JSplitPane leftPane = new JSplitPane();
         leftPane.setTopComponent(treePanel);
@@ -66,6 +62,10 @@ public class MainWindow extends JFrame {
         jPanel.add(contentPanel, BorderLayout.CENTER);
 
         splitPane.setRightComponent(jPanel);
+
+        EventBus.getInstance().register(treeController);
+        EventBus.getInstance().register(contentController);
+        EventBus.getInstance().register(structureController);
 
         add(splitPane);
         setVisible(true);

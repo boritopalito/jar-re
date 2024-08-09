@@ -15,8 +15,6 @@ public class FileSelected {
 
     @Override
     public String toString() {
-        return "FileSelected{" +
-                "file=" + file +
-                '}';
+        return "FileSelected{" + "file=" + file + '}';
     }
 }

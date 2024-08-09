@@ -5,7 +5,7 @@ import java.io.File;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import nl.xx1.jarre.event.EventBus;
-import nl.xx1.jarre.event.EventType;
+import nl.xx1.jarre.events.FileSelected;
 import nl.xx1.jarre.gui.menu.MenuBar;
 
 public class MenuBarController extends BaseController<MenuBar> {
@@ -26,7 +26,8 @@ public class MenuBarController extends BaseController<MenuBar> {
 
         if (result == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
-            EventBus.getInstance().publish(EventType.FILE_SELECTED, selectedFile);
+            FileSelected fileSelected = new FileSelected(selectedFile);
+            EventBus.getInstance().post(fileSelected);
         }
     }
 }
