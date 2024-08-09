@@ -6,6 +6,7 @@ import nl.xx1.jarre.controller.ContentController;
 import nl.xx1.jarre.controller.MenuBarController;
 import nl.xx1.jarre.controller.StructureController;
 import nl.xx1.jarre.controller.TreeController;
+import nl.xx1.jarre.event.EventBus;
 import nl.xx1.jarre.gui.content.ContentPanel;
 import nl.xx1.jarre.gui.menu.MenuBar;
 import nl.xx1.jarre.gui.structure.StructurePanel;
@@ -38,6 +39,8 @@ public class MainWindow extends JFrame {
 
         treePanel = new TreePanel();
         treeController = new TreeController(treePanel);
+
+        EventBus.getInstance().register(treeController);
 
         contentPanel = new ContentPanel();
         contentController = new ContentController(contentPanel);

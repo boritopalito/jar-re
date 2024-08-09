@@ -1,5 +1,6 @@
 package nl.xx1.jarre.event;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,6 +13,14 @@ public class EventBus {
     private final Map<EventType, List<Consumer<Object>>> listeners = new HashMap<>();
 
     private EventBus() {}
+
+    public void register(final Object object) {
+        Method[] methods = object.getClass().getMethods();
+
+        for (Method method : methods) {
+            
+        }
+    }
 
     public void subscribe(EventType eventType, Consumer<Object> listener) {
         listeners.computeIfAbsent(eventType, k -> new ArrayList<>()).add(listener);

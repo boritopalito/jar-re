@@ -9,6 +9,8 @@ import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import nl.xx1.jarre.event.EventBus;
 import nl.xx1.jarre.event.EventType;
+import nl.xx1.jarre.event.Subscribe;
+import nl.xx1.jarre.events.FileSelected;
 import nl.xx1.jarre.gui.tree.ClassMutableTreeNode;
 import nl.xx1.jarre.gui.tree.TreePanel;
 import nl.xx1.jarre.model.DroppedFile;
@@ -37,6 +39,11 @@ public class TreeController extends BaseController<TreePanel> {
 
     private void notifyObservers(ClassNode classNode) {
         observers.forEach(o -> o.update(classNode));
+    }
+
+    @Subscribe
+    private void onFileSelected(FileSelected fileSelected) {
+        System.out.println(fileSelected);
     }
 
     private void updateTree(Object data) {
