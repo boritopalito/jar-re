@@ -63,10 +63,6 @@ public class MainWindow extends JFrame {
 
         splitPane.setRightComponent(jPanel);
 
-        EventBus.getInstance().register(treeController);
-        EventBus.getInstance().register(contentController);
-        EventBus.getInstance().register(structureController);
-
         add(splitPane);
         setVisible(true);
     }
